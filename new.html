@@ -19,17 +19,17 @@
   -->
 
   <!-- <link> 元素 -->
-  <style type="text/css">
-    /* body {background-color: grey}
-    p {color: black} */
-  </style>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
   <!--
     <link> 标签定义了文档与外部资源之间的关系。
     <link> 标签通常用于链接到样式表:
     -->
 
   <!-- <style> 元素 -->
-  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <style type="text/css">
+    /* body {background-color: grey}
+          p {color: black} */
+  </style>
   <!--
     <style> 标签定义了HTML文档的样式文件引用地址.
     在<style> 元素中你也可以直接添加样式来渲染 HTML 文档:
@@ -62,7 +62,102 @@
 </head>
 
 <body>
+  <!-- img图片的属性 -->
+  <!--
+  <img> 是空标签，意思是说，它只包含属性，并且没有闭合标签。
+  要在页面上显示图像，你需要使用源属性src, 指 "source"。源属性的值是图像的 URL 地址。
+  \\
+  alt 属性用来为图像定义一串预备的可替换的文本。
+  替换文本属性的值是用户定义的。在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。
+  此时，浏览器将显示这个替代性的文本而不是图像。
+  为页面上的图像都加上替换文本属性是个好习惯，这样有助于更好的显示信息
+  并且对于那些使用纯文本浏览器的人来说是非常有用的。
+  \\
+  height（高度） 与 width（宽度）属性用于设置图像的高度与宽度。
+  指定图像的高度和宽度的一个很好的习惯。
+  如果图像指定了高度宽度，页面加载时就会保留指定的尺寸。
+  如果没有指定图片的大小，加载页面时有可能会破坏HTML页面的整体布局。
+  \\
+    -->
+  <h2 style="text-align:center">Norwegian Mountain Trip</h2>
+  <img border="10" src="pic/pulpit.jpg" alt="Pulpit rock" width="304" height="228">
+  <br>
+  <p>一个图像:<img src="pic\smiley.gif" alt="Smiley face" width="32" height="32"></p>
+  <br>
+  <p>一个动图:<a href="http://www.bilibili.com"><img src="pic\hackanm.gif" alt="Computer man" width="48" height="48"></a></p>
+  <br>
+  <p>--------以上为html链接图片属性--------</p>
+  <br>
+  <!-------------------------图片部分------------------------->
+  <p>
+    <-------------------------以上为图片部分------------------------->
+  </p>
 
+  <!--
+  内部样式表:
+  当单个文件需要特别样式时，就可以使用内部样式表。你可以在<head> 部分通过 <style> 标签定义内部样式表:
+  <head>
+  <style type="text/css">
+  body {background-color:yellow;}
+  p {color:blue;}
+  </style>
+  </head>
+  外部样式表:
+  当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过 <link> 标签指定一个CSS文件来改变整个站点的外观:
+  <head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  </head>
+    -->
+
+  <!-- 内联样式
+    当特殊的样式需要应用到个别元素时，就可以使用内联样式。
+    使用内联样式的方法是在相关的标签中使用样式属性。
+    样式属性可以包含任何 CSS 属性。
+    以下实例显示出如何改变段落的颜色和左外边距。
+    -->
+  <p style="
+    color:blue;
+    margin-left:20px;">
+    This is a paragraph.
+  </p>
+  <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link" style="text-decoration:none"><h2 style="background-color:red;">这是一个杂糅了很多标签和一个链接的标题</h2></a>
+  <pre><p style="background-color:green;" ><font size = "5">style="
+    background-color:green;
+    &lt;font size = "5"&gt;
+的一个段落
+这里使用了font,但是这是HTML4的遗留,不建议使用
+</font></p></pre>
+  <pre><p style="background-color:green; font-size : 20px;">建议使用这里
+style="
+  background-color:green;
+  font-size : 20px;
+</p></pre>
+  <pre><h1 style="font-family:verdana;">style="
+    font-family:verdana;
+的一个标题</h1></pre>
+  <pre><p style="font-family:arial;color:red;font-size:20px;">style="
+    font-family:arial;
+    color:red;
+    font-size:20px;"
+的一个段落</p></pre>
+  <h1 style="text-align:center;">使用 style="text-align:center; 居中对齐的标题</h1>
+  <p style="text-align:center;">使用 style="text-align:center; 居中对齐的段落</p>
+  <p>--------以上为CSS内联样式--------</p>
+  <br>
+
+  <a href="http://www.runoob.com/css/css-tutorial.html">完整的CSS学习教程</a>
+  <p>--------以上为完整的CSS学习教程,这里我们跟着学习html需要的部分,剩下的部分日后有时间再说吧--------
+  </p>
+
+  <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link">标签链接到一个外部样式表的教程,这里没办法演示这个东西的具体情况</a>
+  <p>--------以上为CSS标签链接到一个外部样式表--------
+  </p>
+
+  <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link" style="text-decoration:none;">使用 style="text-decoration:none; 做一个没有下划线的链接。</a>
+  <p>--------以上为CSS使用样式属性做一个没有下划线的链接。 属性--------
+  </p>
+
+  <br>
   <p>--------以上为CSS--------</p>
   <br>
   <!-------------------------一网页CSS------------------------->
@@ -88,7 +183,10 @@
     <-------------------------以上为网页head部分------------------------->
   </p>
   <p>
-    <a href="http://www.runoob.com/" target="_top">本例演示如何跳出框架，假如你的页面被固定在框架之内。</a>
+    <pre>  <a href="http://www.runoob.com/" target="_top">
+本例演示如何跳出框架，假如你的页面被固定在框架之内。
+不过说实话我还没有搞懂跳出框架和新建页面的区别是什么
+但是为什么又没有新建页面233</a></pre>
   </p>
   <p>--------以上为html链接-跳出框架--------</p>
   <br>
