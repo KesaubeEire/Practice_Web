@@ -62,6 +62,93 @@
 </head>
 
 <body>
+  <br>
+  <p>--------以上为表格边框--------</p>
+
+  <br>
+  <p>
+    每个表格从一个 table 标签开始。 每个表格行从 tr 标签开始。 每个表格的数据从 td 标签开始。
+  </p>
+  <h4>一列:</h4>
+  <table border="1">
+    <tr>
+      <td>100</td>
+    </tr>
+  </table>
+  <h4>一行三列:</h4>
+  <table border="1">
+    <tr>
+      <td>100</td>
+      <td>200</td>
+      <td>300</td>
+    </tr>
+  </table>
+  <h4>两行三列:</h4>
+  <table border="1">
+    <tr>
+      <td>100</td>
+      <td>200</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>500</td>
+      <td>600</td>
+    </tr>
+  </table>
+  <h4>两行三列:</h4>
+  <table border="1">
+    <tr>
+      <td>100</td>
+      <td>200</td>
+      <td>300</td>
+    </tr>
+    <tr>
+      <td>400</td>
+      <td>500</td>
+      <td>600</td>
+    </tr>
+  </table>
+  <br>
+  <p>--------以上为表格演示--------</p>
+  <!-------------------------表格部分------------------------->
+  <p>
+    <-------------------------以上为表格部分------------------------->
+  </p>
+
+  <!-- 图片映射的关键在于一个map标签和下面的area的标签的玩法 -->
+  <!--
+  <map> 标签用于客户端图像映射。图像映射指带有可点击区域的一幅图像。
+  <img>中的 usemap 属性可引用 <map> 中的 id 或 name 属性（取决于浏览器），所以我们应同时向 <map> 添加 id 和 name 属性。
+  area 元素永远嵌套在 map 元素内部。area 元素可定义图像映射中的区域。
+  area 用法详见 http://www.runoob.com/tags/tag-area.html
+   -->
+  <!--
+  HTML5 中, 如果 id 属性在<map> 标签中指定, 则你必须同样指定 name 属性。
+    -->
+  <p>点击太阳或其他行星，注意变化：</p>
+  <img src="pic\planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap" useid="#ppp">
+  <map name="planetmap" id="ppp">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href="pic\sun.gif" target="_blank">
+    <area shape="circle" coords="90,58,3" alt="Mercury" href="pic\merglobe.gif"target="_blank">
+    <area shape="circle" coords="124,58,8" alt="Venus" href="pic\venglobe.gif"target="_blank">
+  </map>
+  <p>--------以上为html图片映射--------</p>
+  <br>
+
+  <!-- 居中问题
+    水平居中的话就在 img所在的标签设置text-align:center
+    垂直居中的话就在 img上一一一一设置vertical-align:middle(这里用了一个div标签,一个div标签用了一个图片以后,最好不要在用其他的元素了,以免居中有误) -->
+  <pre><h2 style="text-align:center">居中的的条件很多啊
+垂直水平各不同
+详情看注释</h2></pre>
+  <div style="text-align:center"><img style="vertical-align:middle" border="10" src="pic/pulpit.jpg" alt="Pulpit rock" width="304" height="228"></div>
+  <br>
+  <p>一个图像:<img src="pic\smiley.gif" alt="Smiley face" width="32" height="32"></p>
+  <br>
+  <pre><p>style="float:right"贴页面右侧的一个动图
+还带了B站的链接:<a href="http://www.bilibili.com"><img src="pic\hackanm.gif" style="float:right" alt="Computer man" width="48" height="48"></a></p></pre>
+
   <!-- img图片的属性 -->
   <!--
   <img> 是空标签，意思是说，它只包含属性，并且没有闭合标签。
@@ -79,15 +166,10 @@
   如果没有指定图片的大小，加载页面时有可能会破坏HTML页面的整体布局。
   \\
     -->
-  <h2 style="text-align:center">Norwegian Mountain Trip</h2>
-  <img border="10" src="pic/pulpit.jpg" alt="Pulpit rock" width="304" height="228">
-  <br>
-  <p>一个图像:<img src="pic\smiley.gif" alt="Smiley face" width="32" height="32"></p>
-  <br>
-  <p>一个动图:<a href="http://www.bilibili.com"><img src="pic\hackanm.gif" alt="Computer man" width="48" height="48"></a></p>
   <br>
   <p>--------以上为html链接图片属性--------</p>
   <br>
+
   <!-------------------------图片部分------------------------->
   <p>
     <-------------------------以上为图片部分------------------------->
