@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <h1>HTML学习记录_2018寒假</h1>
+  <!--防止中文乱码-->
+  <!--根据经验只能放在最前面,放在head的后面部分就tm不起作用了-->
+  <meta charset="utf-8">
+
+  <!-- title元素 -->
+  <title>Kesa.com</title>
+  <!-- 作用:
+    <title> 标签定义了不同文档的标题。
+    <title> 在 HTML/XHTML 文档中是必须的。
+    <title> 元素:
+    定义了浏览器工具栏的标题
+    当网页添加到收藏夹时，显示在收藏夹中的标题
+    显示在搜索引擎结果页面的标题
+  -->
+
+  <!-- <link> 元素 -->
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  <!--
+    <link> 标签定义了文档与外部资源之间的关系。
+    <link> 标签通常用于链接到样式表:
+    -->
+
+  <!-- <style> 元素 -->
+  <style type="text/css">
+    .tabtop13 {
+      margin-top: 13px;
+    }
+
+    .tabtop13 td {
+      background-color: #ffffff;
+      height: 25px;
+      line-height: 150%;
+    }
+
+    .font-center {
+      text-align: center
+    }
+
+    .btbg {
+      background: #e9faff !important;
+    }
+
+    .btbg1 {
+      background: #f2fbfe !important;
+    }
+
+    .btbg2 {
+      background: #f3f3f3 !important;
+    }
+
+    .biaoti {
+      font-family: 微软雅黑;
+      font-size: 26px;
+      font-weight: bold;
+      border-bottom: 1px dashed #CCCCCC;
+      color: #255e95;
+    }
+
+    .titfont {
+
+      font-family: 微软雅黑;
+      font-size: 16px;
+      font-weight: bold;
+      color: #255e95;
+      background: url(../images/ico3.gif) no-repeat 15px center;
+      background-color: #e9faff;
+    }
+
+    .tabtxt2 {
+      font-family: 微软雅黑;
+      font-size: 14px;
+      font-weight: bold;
+      text-align: right;
+      padding-right: 10px;
+      color: #327cd1;
+    }
+
+    .tabtxt3 {
+      font-family: 微软雅黑;
+      font-size: 14px;
+      padding-left: 15px;
+      color: #000;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      line-height: 20px;
+    }
+  </style>
+  <!--
+    <style> 标签定义了HTML文档的样式文件引用地址.
+    在<style> 元素中你也可以直接添加样式来渲染 HTML 文档:
+    -->
+  <!-- HTML <meta> 元素
+    meta标签描述了一些基本的元数据。
+    <meta> 标签提供了元数据.元数据也不显示在页面上，但会被浏览器解析。
+    META 元素通常用于指定网页的描述，关键词，文件的最后修改时间，作者，和其他元数据。
+    元数据可以使用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他Web服务。
+    <meta> 一般放置于 <head> 区域
+    -->
+  <!-- 每content秒钟刷新当前页面: -->
+  <!-- 特别好用,每秒刷新一下,省的手动刷新了,加在<head>里就行 -->
+  <!-- <meta http-equiv="refresh" content="1"> -->
+  <!-- 为搜索引擎定义关键词: -->
+  <meta name="keywords" content="HTML">
+  <!-- 为网页定义描述内容: -->
+  <meta name="description" content="Web & 编程 学习">
+  <!-- 定义网页作者: -->
+  <meta name="author" content="KesaubeEire">
+  <!-- HTML <script> 元素
+    <script>标签用于加载脚本文件，如： JavaScript。
+    <script> 元素在以后的章节中会详细描述。
+    -->
+
+</head>
+
+<body>
+
+  <form name="changeform" action="http://www.w3cschool.cc/try/html_form_submit.php" target="_blank" method="post">
+    <input type="text" name="txt" id="txt" value="Hello Günter" size="30">
+    <input name="submit" type="button" value="URL 编码" onclick="urlencode()">
+    <script>
+      function encode() {
+        x = document.getElementById("text")
+        document.getElementById("encodingresult").innerHTML = x.urlencode()
+      }
+    </script>
+  </form>
+  <span id="encodingresult">233</span>
+  <p>--------以上为html URL 编码函数--------</p>
+  <br>
+  <!-- Coding Following -->
+  <!--Web浏览器通过URL从Web服务器请求页面。
+      当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。
+      一个统一资源定位器(URL) 用于定位万维网上的文档。
+      一个网页地址实例: http://www.runoob.com/html/html-tutorial.html
+      语法规则: ==>  scheme://host.domain:port/path/filename
+      说明:
+          scheme - 定义因特网服务的类型。最常见的类型是 http
+                http	超文本传输协议	以 http:// 开头的普通网页。不加密。
+                https	安全超文本传输协议	安全网页，加密所有信息交换。
+                ftp	文件传输协议	用于将文件下载或上传至网站。
+                file	 	您计算机上的文件。
+          host - 定义域主机（http 的默认主机是 www）
+          domain - 定义因特网域名，比如 runoob.com
+          :port - 定义主机上的端口号（http 的默认端口号是 80）
+          path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+          filename - 定义文档/资源的名称-->
+  <!-- URL的编码比较复杂
+
+
+
+    -->
+  <p>参考: <a href="http://www.runoob.com/tags/html-urlencode.html" style="text-decoration:none;">HTML`URL`编码参考手册</a></p>
+  <p>--------以上为html脚本展示--------</p>
+  <br>
+  <p>
+    <-------------------------以上为html URL ------------------------->
+  </p>
+
+  <table class="reference" border="0.1px" align="center" bgcolor="FFFFE0" style="text-align:center">
+    <tbody>
+      <tr>
+        <th style="width:20%">显示结果</th>
+        <th style="width:20%">描述</th>
+        <th style="width:30%">实体名称</th>
+        <th style="width:30%">实体编号</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>空格</td>
+        <td>&amp;nbsp;</td>
+        <td>&amp;#160;</td>
+      </tr>
+      <tr>
+        <td>&lt;</td>
+        <td>小于号</td>
+        <td>&amp;lt;</td>
+        <td>&amp;#60;</td>
+      </tr>
+      <tr>
+        <td>&gt;</td>
+        <td>大于号</td>
+        <td>&amp;gt;</td>
+        <td>&amp;#62;</td>
+      </tr>
+      <tr>
+        <td>&amp;</td>
+        <td>和号</td>
+        <td>&amp;amp;</td>
+        <td>&amp;#38;</td>
+      </tr>
+      <tr>
+        <td>"</td>
+        <td>引号</td>
+        <td>&amp;quot;</td>
+        <td>&amp;#34;</td>
+      </tr>
+      <tr>
+        <td>'</td>
+        <td>撇号&nbsp;</td>
+        <td>&amp;apos; (IE不支持)</td>
+        <td>&amp;#39;</td>
+      </tr>
+      <tr>
+        <td>￠</td>
+        <td>分</td>
+        <td>&amp;cent;</td>
+        <td>&amp;#162;</td>
+      </tr>
+      <tr>
+        <td>£</td>
+        <td>镑</td>
+        <td>&amp;pound;</td>
+        <td>&amp;#163;</td>
+      </tr>
+      <tr>
+        <td>¥</td>
+        <td>人民币/日元</td>
+        <td>&amp;yen;</td>
+        <td>&amp;#165;</td>
+      </tr>
+      <tr>
+        <td>€</td>
+        <td>欧元</td>
+        <td>&amp;euro;</td>
+        <td>&amp;#8364;</td>
+      </tr>
+      <tr>
+        <td>§</td>
+        <td>小节</td>
+        <td>&amp;sect;</td>
+        <td>&amp;#167;</td>
+      </tr>
+      <tr>
+        <td>©</td>
+        <td>版权</td>
+        <td>&amp;copy;</td>
+        <td>&amp;#169;</td>
+      </tr>
+      <tr>
+        <td>®</td>
+        <td>注册商标</td>
+        <td>&amp;reg;</td>
+        <td>&amp;#174;</td>
+      </tr>
+      <tr>
+        <td>™</td>
+        <td>商标</td>
+        <td>&amp;trade;</td>
+        <td>&amp;#8482;</td>
+      </tr>
+      <tr>
+        <td>×</td>
+        <td>乘号</td>
+        <td>&amp;times;</td>
+        <td>&amp;#215;</td>
+      </tr>
+      <tr>
+        <td>÷</td>
+        <td>除号</td>
+        <td>&amp;divide;</td>
+        <td>&amp;#247;</td>
+      </tr>
+    </tbody>
+  </table>
+  <p>--------以上为html字符实体--------</p>
+  <br>
+  <p>
+    <-------------------------以上为html字符实体 ------------------------->
+  </p>
+
+  <p id="demo_1">
+    JavaScript 能改变 HTML 元素的样式。
+  </p>
+  <script>
+    function myFunction_1() {
+      x = document.getElementById("demo_1") // 找到元素
+      x.style.color = "#ff0000"; // 改变样式
+    }
+  </script>
+  <button type="button" onclick="myFunction_1()">点击这里</button>
+
+  <p id="demo">JavaScript 可以触发事件，就像按钮点击。</p>
+  <script>
+    function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello JavaScript!";
+    }
+  </script>
+  <button type="button" onclick="myFunction()">点我</button>
+  <p>--------以上为html脚本功能展示--------</p>
+  <br>
+
+  <!-- <script> 标签用于定义客户端脚本，比如 JavaScript。
+       <script> 元素既可包含脚本语句，也可通过 src 属性指向外部脚本文件。
+       JavaScript 最常用于图片操作、表单验证以及内容动态更新。
+       <noscript> 标签提供无法使用脚本时的替代内容，比方在浏览器禁用脚本时，或浏览器不支持客户端脚本时。
+       <noscript>元素可包含普通 HTML 页面的 body 元素中能够找到的所有元素。
+       只有在浏览器不支持脚本或者禁用脚本时，才会显示 <noscript> 元素中的内容：
+    -->
+  <script>
+    document.write("Hello World!")
+  </script>
+  <noscript>抱歉，你的浏览器不支持 JavaScript!</noscript>
+  <p>不支持 JavaScript 的浏览器会使用 &lt;noscript&gt; 元素中定义的内容（文本）来替代。</p>
+  <p>--------以上为html脚本展示,看浏览器支不支持JavaScript,Safari的安全中可以关闭JavaScript来测试这个东西--------</p>
+  <br>
+  <p>
+    <-------------------------以上为html脚本 ------------------------->
+  </p>
+
+  <p>菜鸟教程颜色测试</p>
+  <p>表格的背景色: "Black", 与不同的文本颜色一同显示效果图.</p>
+  <table style="width:50%;background-color:Black" id="colortable" align="center">
+    <tr>
+      <th align="left" style="background-color:white">Colorname</th>
+      <th align="right" style="background-color:white">HEX</th>
+      <th align="right" style="background-color:white">RGB</th>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F0F8FF'><b> AliceBlue</b></td>
+      <td align='right' style='color:#F0F8FF'><b>F0F8FF<b></td><td align='right' style='color:#F0F8FF'><b>240,248,255</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FAEBD7'><b> AntiqueWhite</b></td>
+      <td align='right' style='color:#FAEBD7'><b>FAEBD7<b></td><td align='right' style='color:#FAEBD7'><b>250,235,215</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00FFFF'><b> Aqua</b></td>
+      <td align='right' style='color:#00FFFF'><b>00FFFF<b></td><td align='right' style='color:#00FFFF'><b>0,255,255  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#7FFFD4'><b> Aquamarine</b></td>
+      <td align='right' style='color:#7FFFD4'><b>7FFFD4<b></td><td align='right' style='color:#7FFFD4'><b>127,255,212</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F0FFFF'><b> Azure</b></td>
+      <td align='right' style='color:#F0FFFF'><b>F0FFFF<b></td><td align='right' style='color:#F0FFFF'><b>240,255,255</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F5F5DC'><b> Beige</b></td>
+      <td align='right' style='color:#F5F5DC'><b>F5F5DC<b></td><td align='right' style='color:#F5F5DC'><b>245,245,220</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFE4C4'><b> Bisque</b></td>
+      <td align='right' style='color:#FFE4C4'><b>FFE4C4<b></td><td align='right' style='color:#FFE4C4'><b>255,228,196</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#000000'><b> Black</b></td>
+      <td align='right' style='color:#000000'><b>000000<b></td><td align='right' style='color:#000000'><b>0,0,0      </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFEBCD'><b> BlanchedAlmond</b></td>
+      <td align='right' style='color:#FFEBCD'><b>FFEBCD<b></td><td align='right' style='color:#FFEBCD'><b>255,235,205</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#0000FF'><b> Blue</b></td>
+      <td align='right' style='color:#0000FF'><b>0000FF<b></td><td align='right' style='color:#0000FF'><b>0,0,255    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#8A2BE2'><b> BlueViolet</b></td>
+      <td align='right' style='color:#8A2BE2'><b>8A2BE2<b></td><td align='right' style='color:#8A2BE2'><b>138,43,226 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#A52A2A'><b> Brown</b></td>
+      <td align='right' style='color:#A52A2A'><b>A52A2A<b></td><td align='right' style='color:#A52A2A'><b>165,42,42  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DEB887'><b> BurlyWood</b></td>
+      <td align='right' style='color:#DEB887'><b>DEB887<b></td><td align='right' style='color:#DEB887'><b>222,184,135</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#5F9EA0'><b> CadetBlue</b></td>
+      <td align='right' style='color:#5F9EA0'><b>5F9EA0<b></td><td align='right' style='color:#5F9EA0'><b>95,158,160 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#7FFF00'><b> Chartreuse</b></td>
+      <td align='right' style='color:#7FFF00'><b>7FFF00<b></td><td align='right' style='color:#7FFF00'><b>127,255,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#D2691E'><b> Chocolate</b></td>
+      <td align='right' style='color:#D2691E'><b>D2691E<b></td><td align='right' style='color:#D2691E'><b>210,105,30 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF7F50'><b> Coral</b></td>
+      <td align='right' style='color:#FF7F50'><b>FF7F50<b></td><td align='right' style='color:#FF7F50'><b>255,127,80 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#6495ED'><b> CornflowerBlue</b></td>
+      <td align='right' style='color:#6495ED'><b>6495ED<b></td><td align='right' style='color:#6495ED'><b>100,149,237</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFF8DC'><b> Cornsilk</b></td>
+      <td align='right' style='color:#FFF8DC'><b>FFF8DC<b></td><td align='right' style='color:#FFF8DC'><b>255,248,220</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DC143C'><b> Crimson</b></td>
+      <td align='right' style='color:#DC143C'><b>DC143C<b></td><td align='right' style='color:#DC143C'><b>220,20,60  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00FFFF'><b> Cyan</b></td>
+      <td align='right' style='color:#00FFFF'><b>00FFFF<b></td><td align='right' style='color:#00FFFF'><b>0,255,255  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00008B'><b> DarkBlue</b></td>
+      <td align='right' style='color:#00008B'><b>00008B<b></td><td align='right' style='color:#00008B'><b>0,0,139    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#008B8B'><b> DarkCyan</b></td>
+      <td align='right' style='color:#008B8B'><b>008B8B<b></td><td align='right' style='color:#008B8B'><b>0,139,139  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#B8860B'><b> DarkGoldenRod</b></td>
+      <td align='right' style='color:#B8860B'><b>B8860B<b></td><td align='right' style='color:#B8860B'><b>184,134,11 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#A9A9A9'><b> DarkGray</b></td>
+      <td align='right' style='color:#A9A9A9'><b>A9A9A9<b></td><td align='right' style='color:#A9A9A9'><b>169,169,169</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#006400'><b> DarkGreen</b></td>
+      <td align='right' style='color:#006400'><b>006400<b></td><td align='right' style='color:#006400'><b>0,100,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#BDB76B'><b> DarkKhaki</b></td>
+      <td align='right' style='color:#BDB76B'><b>BDB76B<b></td><td align='right' style='color:#BDB76B'><b>189,183,107</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#8B008B'><b> DarkMagenta</b></td>
+      <td align='right' style='color:#8B008B'><b>8B008B<b></td><td align='right' style='color:#8B008B'><b>139,0,139  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#556B2F'><b> DarkOliveGreen</b></td>
+      <td align='right' style='color:#556B2F'><b>556B2F<b></td><td align='right' style='color:#556B2F'><b>85,107,47  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF8C00'><b> DarkOrange</b></td>
+      <td align='right' style='color:#FF8C00'><b>FF8C00<b></td><td align='right' style='color:#FF8C00'><b>255,140,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#9932CC'><b> DarkOrchid</b></td>
+      <td align='right' style='color:#9932CC'><b>9932CC<b></td><td align='right' style='color:#9932CC'><b>153,50,204 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#8B0000'><b> DarkRed</b></td>
+      <td align='right' style='color:#8B0000'><b>8B0000<b></td><td align='right' style='color:#8B0000'><b>139,0,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#E9967A'><b> DarkSalmon</b></td>
+      <td align='right' style='color:#E9967A'><b>E9967A<b></td><td align='right' style='color:#E9967A'><b>233,150,122</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#8FBC8F'><b> DarkSeaGreen</b></td>
+      <td align='right' style='color:#8FBC8F'><b>8FBC8F<b></td><td align='right' style='color:#8FBC8F'><b>143,188,143</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#483D8B'><b> DarkSlateBlue</b></td>
+      <td align='right' style='color:#483D8B'><b>483D8B<b></td><td align='right' style='color:#483D8B'><b>72,61,139  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#2F4F4F'><b> DarkSlateGray</b></td>
+      <td align='right' style='color:#2F4F4F'><b>2F4F4F<b></td><td align='right' style='color:#2F4F4F'><b>47,79,79   </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00CED1'><b> DarkTurquoise</b></td>
+      <td align='right' style='color:#00CED1'><b>00CED1<b></td><td align='right' style='color:#00CED1'><b>0,206,209  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#9400D3'><b> DarkViolet</b></td>
+      <td align='right' style='color:#9400D3'><b>9400D3<b></td><td align='right' style='color:#9400D3'><b>148,0,211  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF1493'><b> DeepPink</b></td>
+      <td align='right' style='color:#FF1493'><b>FF1493<b></td><td align='right' style='color:#FF1493'><b>255,20,147 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00BFFF'><b> DeepSkyBlue</b></td>
+      <td align='right' style='color:#00BFFF'><b>00BFFF<b></td><td align='right' style='color:#00BFFF'><b>0,191,255  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#696969'><b> DimGray</b></td>
+      <td align='right' style='color:#696969'><b>696969<b></td><td align='right' style='color:#696969'><b>105,105,105</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#1E90FF'><b> DodgerBlue</b></td>
+      <td align='right' style='color:#1E90FF'><b>1E90FF<b></td><td align='right' style='color:#1E90FF'><b>30,144,255 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#B22222'><b> FireBrick</b></td>
+      <td align='right' style='color:#B22222'><b>B22222<b></td><td align='right' style='color:#B22222'><b>178,34,34  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFAF0'><b> FloralWhite</b></td>
+      <td align='right' style='color:#FFFAF0'><b>FFFAF0<b></td><td align='right' style='color:#FFFAF0'><b>255,250,240</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#228B22'><b> ForestGreen</b></td>
+      <td align='right' style='color:#228B22'><b>228B22<b></td><td align='right' style='color:#228B22'><b>34,139,34  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF00FF'><b> Fuchsia</b></td>
+      <td align='right' style='color:#FF00FF'><b>FF00FF<b></td><td align='right' style='color:#FF00FF'><b>255,0,255  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DCDCDC'><b> Gainsboro</b></td>
+      <td align='right' style='color:#DCDCDC'><b>DCDCDC<b></td><td align='right' style='color:#DCDCDC'><b>220,220,220</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F8F8FF'><b> GhostWhite</b></td>
+      <td align='right' style='color:#F8F8FF'><b>F8F8FF<b></td><td align='right' style='color:#F8F8FF'><b>248,248,255</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFD700'><b> Gold</b></td>
+      <td align='right' style='color:#FFD700'><b>FFD700<b></td><td align='right' style='color:#FFD700'><b>255,215,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DAA520'><b> GoldenRod</b></td>
+      <td align='right' style='color:#DAA520'><b>DAA520<b></td><td align='right' style='color:#DAA520'><b>218,165,32 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#808080'><b> Gray</b></td>
+      <td align='right' style='color:#808080'><b>808080<b></td><td align='right' style='color:#808080'><b>128,128,128</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#008000'><b> Green</b></td>
+      <td align='right' style='color:#008000'><b>008000<b></td><td align='right' style='color:#008000'><b>0,128,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#ADFF2F'><b> GreenYellow</b></td>
+      <td align='right' style='color:#ADFF2F'><b>ADFF2F<b></td><td align='right' style='color:#ADFF2F'><b>173,255,47 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F0FFF0'><b> HoneyDew</b></td>
+      <td align='right' style='color:#F0FFF0'><b>F0FFF0<b></td><td align='right' style='color:#F0FFF0'><b>240,255,240</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF69B4'><b> HotPink</b></td>
+      <td align='right' style='color:#FF69B4'><b>FF69B4<b></td><td align='right' style='color:#FF69B4'><b>255,105,180</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#CD5C5C'><b> IndianRed </b></td>
+      <td align='right' style='color:#CD5C5C'><b>CD5C5C<b></td><td align='right' style='color:#CD5C5C'><b>205,92,92  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#4B0082'><b> Indigo  </b></td>
+      <td align='right' style='color:#4B0082'><b>4B0082<b></td><td align='right' style='color:#4B0082'><b>75,0,130   </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFFF0'><b> Ivory</b></td>
+      <td align='right' style='color:#FFFFF0'><b>FFFFF0<b></td><td align='right' style='color:#FFFFF0'><b>255,255,240</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F0E68C'><b> Khaki</b></td>
+      <td align='right' style='color:#F0E68C'><b>F0E68C<b></td><td align='right' style='color:#F0E68C'><b>240,230,140</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#E6E6FA'><b> Lavender</b></td>
+      <td align='right' style='color:#E6E6FA'><b>E6E6FA<b></td><td align='right' style='color:#E6E6FA'><b>230,230,250</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFF0F5'><b> LavenderBlush</b></td>
+      <td align='right' style='color:#FFF0F5'><b>FFF0F5<b></td><td align='right' style='color:#FFF0F5'><b>255,240,245</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#7CFC00'><b> LawnGreen</b></td>
+      <td align='right' style='color:#7CFC00'><b>7CFC00<b></td><td align='right' style='color:#7CFC00'><b>124,252,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFACD'><b> LemonChiffon</b></td>
+      <td align='right' style='color:#FFFACD'><b>FFFACD<b></td><td align='right' style='color:#FFFACD'><b>255,250,205</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#ADD8E6'><b> LightBlue</b></td>
+      <td align='right' style='color:#ADD8E6'><b>ADD8E6<b></td><td align='right' style='color:#ADD8E6'><b>173,216,230</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F08080'><b> LightCoral</b></td>
+      <td align='right' style='color:#F08080'><b>F08080<b></td><td align='right' style='color:#F08080'><b>240,128,128</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#E0FFFF'><b> LightCyan</b></td>
+      <td align='right' style='color:#E0FFFF'><b>E0FFFF<b></td><td align='right' style='color:#E0FFFF'><b>224,255,255</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FAFAD2'><b> LightGoldenRodYellow</b></td>
+      <td align='right' style='color:#FAFAD2'><b>FAFAD2<b></td><td align='right' style='color:#FAFAD2'><b>250,250,210</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#D3D3D3'><b> LightGray</b></td>
+      <td align='right' style='color:#D3D3D3'><b>D3D3D3<b></td><td align='right' style='color:#D3D3D3'><b>211,211,211</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#90EE90'><b> LightGreen</b></td>
+      <td align='right' style='color:#90EE90'><b>90EE90<b></td><td align='right' style='color:#90EE90'><b>144,238,144</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFB6C1'><b> LightPink</b></td>
+      <td align='right' style='color:#FFB6C1'><b>FFB6C1<b></td><td align='right' style='color:#FFB6C1'><b>255,182,193</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFA07A'><b> LightSalmon</b></td>
+      <td align='right' style='color:#FFA07A'><b>FFA07A<b></td><td align='right' style='color:#FFA07A'><b>255,160,122</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#20B2AA'><b> LightSeaGreen</b></td>
+      <td align='right' style='color:#20B2AA'><b>20B2AA<b></td><td align='right' style='color:#20B2AA'><b>32,178,170 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#87CEFA'><b> LightSkyBlue</b></td>
+      <td align='right' style='color:#87CEFA'><b>87CEFA<b></td><td align='right' style='color:#87CEFA'><b>135,206,250</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#778899'><b> LightSlateGray</b></td>
+      <td align='right' style='color:#778899'><b>778899<b></td><td align='right' style='color:#778899'><b>119,136,153</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#B0C4DE'><b> LightSteelBlue</b></td>
+      <td align='right' style='color:#B0C4DE'><b>B0C4DE<b></td><td align='right' style='color:#B0C4DE'><b>176,196,222</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFFE0'><b> LightYellow</b></td>
+      <td align='right' style='color:#FFFFE0'><b>FFFFE0<b></td><td align='right' style='color:#FFFFE0'><b>255,255,224</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00FF00'><b> Lime</b></td>
+      <td align='right' style='color:#00FF00'><b>00FF00<b></td><td align='right' style='color:#00FF00'><b>0,255,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#32CD32'><b> LimeGreen</b></td>
+      <td align='right' style='color:#32CD32'><b>32CD32<b></td><td align='right' style='color:#32CD32'><b>50,205,50  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FAF0E6'><b> Linen</b></td>
+      <td align='right' style='color:#FAF0E6'><b>FAF0E6<b></td><td align='right' style='color:#FAF0E6'><b>250,240,230</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF00FF'><b> Magenta</b></td>
+      <td align='right' style='color:#FF00FF'><b>FF00FF<b></td><td align='right' style='color:#FF00FF'><b>255,0,255  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#800000'><b> Maroon</b></td>
+      <td align='right' style='color:#800000'><b>800000<b></td><td align='right' style='color:#800000'><b>128,0,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#66CDAA'><b> MediumAquaMarine</b></td>
+      <td align='right' style='color:#66CDAA'><b>66CDAA<b></td><td align='right' style='color:#66CDAA'><b>102,205,170</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#0000CD'><b> MediumBlue</b></td>
+      <td align='right' style='color:#0000CD'><b>0000CD<b></td><td align='right' style='color:#0000CD'><b>0,0,205    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#BA55D3'><b> MediumOrchid</b></td>
+      <td align='right' style='color:#BA55D3'><b>BA55D3<b></td><td align='right' style='color:#BA55D3'><b>186,85,211 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#9370DB'><b> MediumPurple</b></td>
+      <td align='right' style='color:#9370DB'><b>9370DB<b></td><td align='right' style='color:#9370DB'><b>147,112,219</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#3CB371'><b> MediumSeaGreen</b></td>
+      <td align='right' style='color:#3CB371'><b>3CB371<b></td><td align='right' style='color:#3CB371'><b>60,179,113 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#7B68EE'><b> MediumSlateBlue</b></td>
+      <td align='right' style='color:#7B68EE'><b>7B68EE<b></td><td align='right' style='color:#7B68EE'><b>123,104,238</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00FA9A'><b> MediumSpringGreen</b></td>
+      <td align='right' style='color:#00FA9A'><b>00FA9A<b></td><td align='right' style='color:#00FA9A'><b>0,250,154  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#48D1CC'><b> MediumTurquoise</b></td>
+      <td align='right' style='color:#48D1CC'><b>48D1CC<b></td><td align='right' style='color:#48D1CC'><b>72,209,204 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#C71585'><b> MediumVioletRed</b></td>
+      <td align='right' style='color:#C71585'><b>C71585<b></td><td align='right' style='color:#C71585'><b>199,21,133 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#191970'><b> MidnightBlue</b></td>
+      <td align='right' style='color:#191970'><b>191970<b></td><td align='right' style='color:#191970'><b>25,25,112  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F5FFFA'><b> MintCream</b></td>
+      <td align='right' style='color:#F5FFFA'><b>F5FFFA<b></td><td align='right' style='color:#F5FFFA'><b>245,255,250</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFE4E1'><b> MistyRose</b></td>
+      <td align='right' style='color:#FFE4E1'><b>FFE4E1<b></td><td align='right' style='color:#FFE4E1'><b>255,228,225</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFE4B5'><b> Moccasin</b></td>
+      <td align='right' style='color:#FFE4B5'><b>FFE4B5<b></td><td align='right' style='color:#FFE4B5'><b>255,228,181</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFDEAD'><b> NavajoWhite</b></td>
+      <td align='right' style='color:#FFDEAD'><b>FFDEAD<b></td><td align='right' style='color:#FFDEAD'><b>255,222,173</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#000080'><b> Navy</b></td>
+      <td align='right' style='color:#000080'><b>000080<b></td><td align='right' style='color:#000080'><b>0,0,128    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FDF5E6'><b> OldLace</b></td>
+      <td align='right' style='color:#FDF5E6'><b>FDF5E6<b></td><td align='right' style='color:#FDF5E6'><b>253,245,230</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#808000'><b> Olive</b></td>
+      <td align='right' style='color:#808000'><b>808000<b></td><td align='right' style='color:#808000'><b>128,128,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#6B8E23'><b> OliveDrab</b></td>
+      <td align='right' style='color:#6B8E23'><b>6B8E23<b></td><td align='right' style='color:#6B8E23'><b>107,142,35 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFA500'><b> Orange</b></td>
+      <td align='right' style='color:#FFA500'><b>FFA500<b></td><td align='right' style='color:#FFA500'><b>255,165,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF4500'><b> OrangeRed</b></td>
+      <td align='right' style='color:#FF4500'><b>FF4500<b></td><td align='right' style='color:#FF4500'><b>255,69,0   </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DA70D6'><b> Orchid</b></td>
+      <td align='right' style='color:#DA70D6'><b>DA70D6<b></td><td align='right' style='color:#DA70D6'><b>218,112,214</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#EEE8AA'><b> PaleGoldenRod</b></td>
+      <td align='right' style='color:#EEE8AA'><b>EEE8AA<b></td><td align='right' style='color:#EEE8AA'><b>238,232,170</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#98FB98'><b> PaleGreen</b></td>
+      <td align='right' style='color:#98FB98'><b>98FB98<b></td><td align='right' style='color:#98FB98'><b>152,251,152</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#AFEEEE'><b> PaleTurquoise</b></td>
+      <td align='right' style='color:#AFEEEE'><b>AFEEEE<b></td><td align='right' style='color:#AFEEEE'><b>175,238,238</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DB7093'><b> PaleVioletRed</b></td>
+      <td align='right' style='color:#DB7093'><b>DB7093<b></td><td align='right' style='color:#DB7093'><b>219,112,147</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFEFD5'><b> PapayaWhip</b></td>
+      <td align='right' style='color:#FFEFD5'><b>FFEFD5<b></td><td align='right' style='color:#FFEFD5'><b>255,239,213</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFDAB9'><b> PeachPuff</b></td>
+      <td align='right' style='color:#FFDAB9'><b>FFDAB9<b></td><td align='right' style='color:#FFDAB9'><b>255,218,185</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#CD853F'><b> Peru</b></td>
+      <td align='right' style='color:#CD853F'><b>CD853F<b></td><td align='right' style='color:#CD853F'><b>205,133,63 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFC0CB'><b> Pink</b></td>
+      <td align='right' style='color:#FFC0CB'><b>FFC0CB<b></td><td align='right' style='color:#FFC0CB'><b>255,192,203</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#DDA0DD'><b> Plum</b></td>
+      <td align='right' style='color:#DDA0DD'><b>DDA0DD<b></td><td align='right' style='color:#DDA0DD'><b>221,160,221</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#B0E0E6'><b> PowderBlue</b></td>
+      <td align='right' style='color:#B0E0E6'><b>B0E0E6<b></td><td align='right' style='color:#B0E0E6'><b>176,224,230</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#800080'><b> Purple</b></td>
+      <td align='right' style='color:#800080'><b>800080<b></td><td align='right' style='color:#800080'><b>128,0,128  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF0000'><b> Red</b></td>
+      <td align='right' style='color:#FF0000'><b>FF0000<b></td><td align='right' style='color:#FF0000'><b>255,0,0    </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#BC8F8F'><b> RosyBrown</b></td>
+      <td align='right' style='color:#BC8F8F'><b>BC8F8F<b></td><td align='right' style='color:#BC8F8F'><b>188,143,143</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#4169E1'><b> RoyalBlue</b></td>
+      <td align='right' style='color:#4169E1'><b>4169E1<b></td><td align='right' style='color:#4169E1'><b>65,105,225 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#8B4513'><b> SaddleBrown</b></td>
+      <td align='right' style='color:#8B4513'><b>8B4513<b></td><td align='right' style='color:#8B4513'><b>139,69,19  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FA8072'><b> Salmon</b></td>
+      <td align='right' style='color:#FA8072'><b>FA8072<b></td><td align='right' style='color:#FA8072'><b>250,128,114</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F4A460'><b> SandyBrown</b></td>
+      <td align='right' style='color:#F4A460'><b>F4A460<b></td><td align='right' style='color:#F4A460'><b>244,164,96 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#2E8B57'><b> SeaGreen</b></td>
+      <td align='right' style='color:#2E8B57'><b>2E8B57<b></td><td align='right' style='color:#2E8B57'><b>46,139,87  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFF5EE'><b> SeaShell</b></td>
+      <td align='right' style='color:#FFF5EE'><b>FFF5EE<b></td><td align='right' style='color:#FFF5EE'><b>255,245,238</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#A0522D'><b> Sienna</b></td>
+      <td align='right' style='color:#A0522D'><b>A0522D<b></td><td align='right' style='color:#A0522D'><b>160,82,45  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#C0C0C0'><b> Silver</b></td>
+      <td align='right' style='color:#C0C0C0'><b>C0C0C0<b></td><td align='right' style='color:#C0C0C0'><b>192,192,192</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#87CEEB'><b> SkyBlue</b></td>
+      <td align='right' style='color:#87CEEB'><b>87CEEB<b></td><td align='right' style='color:#87CEEB'><b>135,206,235</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#6A5ACD'><b> SlateBlue</b></td>
+      <td align='right' style='color:#6A5ACD'><b>6A5ACD<b></td><td align='right' style='color:#6A5ACD'><b>106,90,205 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#708090'><b> SlateGray</b></td>
+      <td align='right' style='color:#708090'><b>708090<b></td><td align='right' style='color:#708090'><b>112,128,144</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFAFA'><b> Snow</b></td>
+      <td align='right' style='color:#FFFAFA'><b>FFFAFA<b></td><td align='right' style='color:#FFFAFA'><b>255,250,250</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#00FF7F'><b> SpringGreen</b></td>
+      <td align='right' style='color:#00FF7F'><b>00FF7F<b></td><td align='right' style='color:#00FF7F'><b>0,255,127  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#4682B4'><b> SteelBlue</b></td>
+      <td align='right' style='color:#4682B4'><b>4682B4<b></td><td align='right' style='color:#4682B4'><b>70,130,180 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#D2B48C'><b> Tan</b></td>
+      <td align='right' style='color:#D2B48C'><b>D2B48C<b></td><td align='right' style='color:#D2B48C'><b>210,180,140</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#008080'><b> Teal</b></td>
+      <td align='right' style='color:#008080'><b>008080<b></td><td align='right' style='color:#008080'><b>0,128,128  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#D8BFD8'><b> Thistle</b></td>
+      <td align='right' style='color:#D8BFD8'><b>D8BFD8<b></td><td align='right' style='color:#D8BFD8'><b>216,191,216</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FF6347'><b> Tomato</b></td>
+      <td align='right' style='color:#FF6347'><b>FF6347<b></td><td align='right' style='color:#FF6347'><b>255,99,71  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#40E0D0'><b> Turquoise</b></td>
+      <td align='right' style='color:#40E0D0'><b>40E0D0<b></td><td align='right' style='color:#40E0D0'><b>64,224,208 </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#EE82EE'><b> Violet</b></td>
+      <td align='right' style='color:#EE82EE'><b>EE82EE<b></td><td align='right' style='color:#EE82EE'><b>238,130,238</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F5DEB3'><b> Wheat</b></td>
+      <td align='right' style='color:#F5DEB3'><b>F5DEB3<b></td><td align='right' style='color:#F5DEB3'><b>245,222,179</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFFFF'><b> White</b></td>
+      <td align='right' style='color:#FFFFFF'><b>FFFFFF<b></td><td align='right' style='color:#FFFFFF'><b>255,255,255</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#F5F5F5'><b> WhiteSmoke</b></td>
+      <td align='right' style='color:#F5F5F5'><b>F5F5F5<b></td><td align='right' style='color:#F5F5F5'><b>245,245,245</b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#FFFF00'><b> Yellow</b></td>
+      <td align='right' style='color:#FFFF00'><b>FFFF00<b></td><td align='right' style='color:#FFFF00'><b>255,255,0  </b></td>
+    </tr>
+    <tr>
+      <td align='left' style='color:#9ACD32'><b> YellowGreen</b></td>
+      <td align='right' style='color:#9ACD32'><b>9ACD32<b></td><td align='right' style='color:#9ACD32'><b>154,205,50 </b></td>
+    </tr>
+  </table>
+  <!--
+  颜色	 3位十六进制颜色值	 6位十六进制颜色值	      RGB
+           	#000	        #000000	            rgb(0,0,0)
+           	#F00	        #FF0000	            rgb(255,0,0)
+           	#0F0	        #00FF00	            rgb(0,255,0)
+           	#00F	        #0000FF	            rgb(0,0,255)
+           	#FF0	        #FFFF00	            rgb(255,255,0)
+           	#0FF	        #00FFFF	            rgb(0,255,255)
+           	#F0F	        #FF00FF	            rgb(255,0,255)
+           	#888	        #888888	            rgb(136,136,136)
+           	#FFF	        #FFFFFF	            rgb(255,255,255)
+-->
+  <p>--------以上为html的颜色部分--------</p>
+  <br>
+
+  <p>
+    <-------------------------以上为html颜色部分 ------------------------->
+  </p>
+
+  <div align="center">
+    <iframe width="90%" height="600" src="http://www.runoob.com" name="iframe_a" id="iframe_a"></iframe>
+    <p><a href="http://www.hao123.com" target="iframe_a">HAO123.com</a></p>
+    <p><b>注意：</b> 因为 a 标签的 target 属性是名为 iframe_a 的 iframe 框架，所以在点击链接时页面会显示在 iframe框架中。</p>
+  </div>
+
+  <p>--------以上为frame内部打开网页--------</p>
+  <br>
+
+  <div align="center">
+    <iframe width="90%" height="200" frameborder="1"></iframe>
+    <!-- frameborder 属性用于定义iframe表示是否显示边框。
+         设置属性值为 "0" 移除iframe的边框:
+         改变属性值不会影响边框的厚度 -->
+    <!-- 加上src="http://www.hao123.com" 就会把页面指定到这个页面 -->
+  </div>
+  <p>--------以上为html的frame展示--------</p>
+  <br>
+
+  <p>
+    <-------------------------以上为html框架部分 ------------------------->
+  </p>
+
+  <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <!--  max - 规定允许的最大值。
+          min - 规定允许的最小值。
+         step - 规定合法数字间隔。
+        value - 规定默认值。
+      -->
+    <input type="range" id="a" min="0" max="100" value="50">100 +<input type="number" id="b" value="50" max="80"> =<output name="x" for="a b"></output>
+  </form>
+  <p>--------以上为input的属性--------</p>
+  <br>
+
+  <textarea rows="10" cols="30">
+  我是一个文本框。
+  </textarea>
+  <p>--------以上为复选按钮--------</p>
+  <br>
+
+  <form action="">
+    <select name="cars">
+      <optgroup label="Origin">
+        <option value="volvo">Kesa</option>
+      </optgroup>
+      <optgroup label="Sub_section">
+        <option value="saab">Kesa.Kesoft</option>
+        <option value="fiat" selected>Kesa.Kame </option>
+        <option value="audi">Kesa.Kelog</option>
+      </optgroup>
+  </select>
+  </form>
+  <p>--------以上为表单复选框及复选框的组按钮,使用 selected 以预选--------</p>
+  <br>
+
+  <form name="input0" target="_blank" action="Kesa.com.form_stored.php" method="get">
+    Username: <input type="text" name="user" size="20"> <br> Password: <input type="password" name="pwd" size="20">
+    <br><input type="submit" value="提交">
+    <input type="reset" name="button" id="button" value="重置">
+  </form>
+  <p>--------以上为表单范例按钮 && 提交 && 重置按键--------</p>
+  <br>
+
+  <form action="Kesa.com.form_stored" method="get">
+    <fieldset>
+      <legend>Personal information:</legend><input type="checkbox" name="vehicle[]" value="Bike"> I have a bike<br><input type="checkbox" name="vehicle[]" value="Car"> I have a car<br><input type="checkbox" name="vehicle[]" value="Plane"> I have a penis<br>
+      <input type="submit" value="提交">
+    </fieldset>
+  </form>
+  <p>--------以上为复选按钮--------</p>
+  <br>
+
+  <form action="">
+    <input type="radio" name="sex" value="male">Male<br>
+    <input type="radio" name="sex" value="female">Female<br>
+    <input type="submit" value="提交">
+  </form>
+  <p><b>注意：</b>当用户点击一个单选按钮时，它就会被选中，其他的单选按钮就不会被选中。</p>
+  <p>--------以上为单选按钮--------</p>
+  <br>
+
+  <form action="">
+    First name: <input type="text" name="firstname"><br> Last name: <input type="text" name="lastname">
+  </form>
+  <p>--------以上为表单范例--------</p>
+  <br>
+  <p>
+    <-------------------------以上为 表单和输入------------------------->
+  </p>
+
+  <table>
+    <tr>
+      <td>
+        <h4>编号列表：</h4>
+        <ol>
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+      </td>
+      <td>
+        <h4>大写字母列表：</h4>
+        <ol type="A">
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+      </td>
+      <td>
+        <h4>小写字母列表：</h4>
+        <ol type="a">
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+      </td>
+      <td>
+        <h4>罗马数字列表：</h4>
+        <ol type="I">
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+      </td>
+      <td>
+        <h4>小写罗马数字列表：</h4>
+        <ol type="i">
+          <li>Apples</li>
+          <li>Bananas</li>
+          <li>Lemons</li>
+          <li>Oranges</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+  <p>--------以上为不同类型的有序列表--------</p>
+  <br>
+
+  <pre style="font-size:15px"><h4>无标记的自定义列表:
+&lt;dl&gt;开头,&lt;dt&gt;是项目&lt;dd&gt;是描述</h4></pre>
+  <!-- 自定义列表不仅仅是一列项目，而是项目及其注释的组合。 -->
+  <dl>
+    <dt>Coffee</dt>
+    <dd>Black hot drink</dd>
+    <dt>Milk</dt>
+    <dd>White cold drink</dd>
+  </dl>
+  <h4>无序列表及用style标识的三种不同的列表表示形状:</h4>
+  <ul>
+    <li style="list-style-type:circle">Coffee</li>
+    <li style="list-style-type:disc">Tea</li>
+    <li style="list-style-type:square">Milk</li>
+  </ul>
+  <h4>有序列表以及嵌套列表:</h4>
+  <table>
+    <tr>
+      <td>
+        <ol>
+          <li>Coffee</li>
+          <li>Tea</li>
+          <ol>
+            <li>Black tea</li>
+            <li>Green tea</li>
+          </ol>
+          <li>Milk</li>
+        </ol>
+      </td>
+      <td>
+        <ol start="50">
+          <li>Coffee</li>
+          <li>Tea</li>
+          <ul>
+            <li>Black tea</li>
+            <li>Green tea</li>
+            <ul>
+              <li>China</li>
+              <li>Africa</li>
+            </ul>
+          </ul>
+          <li>Milk</li>
+        </ol>
+      </td>
+    </tr>
+  </table>
+  <p>--------以上为有序和无序的列表部分--------</p>
+  <br>
+
+  <-------------------------列表部分------------------------->
+    </p>
+
+    <div align=c enter>
+      <div id="maxname" style="width:90%; " align=c enter>
+        <div id="hname" style="background-color:#666FFF;">
+          <h1 style="margin-bottom:0;text-align:center;">Div布局实例</h1>
+        </div>
+        <div id="menu" style="background-color:#FFFFFF;height:200px;width:20%;float:left;text-align:center">菜单<br/>num1<br/>num2<br/>num3</div>
+        <div id="content" style="background-color:#FFFF00;height:200px;width:60%;float:left;text-align:center">
+          中间内容
+        </div>
+        <div id="right" style="background-color:#000000;color:#FFFFFF;height:200px;width:20%;float:right;text-align:center">
+          信息内容
+        </div>
+        <div id="bool" style="background-color:#F0F8FF;clear:both;text-align:center;">
+          作者：Cty
+        </div>
+      </div>
+    </div>
+    <p>我的母亲有 <span style="color:blue;font-weight:bold">蓝色</span> 的眼睛，我得父亲有 <span style="color:darkolivegreen;font-weight:bold">碧绿色</span> 的眼睛。</p>
+    <!-- div和span都是空的部件,div是块级的自带回车,span多用于一行内显示文字不同等吧大概 -->
+    <!-------------------------div && span部分------------------------->
+    <p>
+      <-------------------------以上为div && span部分------------------------->
+    </p>
+
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0" align="center">
+      <tr>
+        <td align="center" class="biaoti" height="60">受理员业务统计表</td>
+      </tr>
+      <tr>
+        <td align="right" height="25">2017-01-02---2017-05-02</td>
+      </tr>
+    </table>
+
+    <table width="100%" border="0" cellspacing="1" cellpadding="4" bgcolor="#cccccc" class="tabtop13" align="center">
+      <tr>
+        <td colspan="2" class="btbg font-center titfont" rowspan="2" style="text-align:center">受理员</td>
+        <td width="10%" class="btbg font-center titfont" rowspan="2" style="text-align:center">受理数</td>
+        <td width="10%" class="btbg font-center titfont" rowspan="2" style="text-align:center">自办数</td>
+        <td width="10%" class="btbg font-center titfont" rowspan="2" style="text-align:center">直接解答</td>
+        <td colspan="2" class="btbg font-center titfont" style="text-align:center">拟办意见</td>
+        <td colspan="2" class="btbg font-center titfont" style="text-align:center">返回修改</td>
+        <td colspan="3" class="btbg font-center titfont" style="text-align:center">工单类型</td>
+      </tr>
+      <tr>
+        <td width="8%" class="btbg font-center" style="text-align:center">同意</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">比例</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">数量</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">比例</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">建议件</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">诉求件</td>
+        <td width="8%" class="btbg font-center" style="text-align:center">咨询件</td>
+      </tr>
+      <tr>
+        <td width="7%" rowspan="8" class="btbg1 font-center" style="text-align:center">受理处</td>
+        <td width="7%" class="btbg2" style="text-align:center">王艳</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2 font-center" style="text-align:center">总计</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+      </tr>
+      <tr>
+        <td width="7%" rowspan="8" class="btbg1 font-center">话务组</td>
+        <td width="7%" class="btbg2" style="text-align:center">王艳</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">王艳</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">王艳</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">王艳</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2" style="text-align:center">&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+      </tr>
+      <tr>
+        <td class="btbg2 font-center" style="text-align:center">总计</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+        <td class="btbg2 font-center" style="text-align:center">20</td>
+      </tr>
+    </table>
+
+    <p style="text-align:center"> -----漂亮的表格(网站的范例)----- <a href="https://c.runoob.com/codedemo/3187" style="text-decoration:none;font-size:30px">地址在这里</a> </p>
+
+    <table cellspacing="10">
+      <tr>
+        <td>
+          <pre><h4>没有
+单元格边距:
+没有
+单元格间距</h4></pre>
+        </td>
+        <td>
+          <pre><h4>有
+单元格边距:
+没有
+单元格间距</h4></pre>
+        </td>
+        <td>
+          <pre><h4>没有
+单元格边距:
+有
+单元格间距为0</h4></pre>
+        </td>
+        <td>
+          <pre><h4>没有
+单元格边距:
+有
+单元格间距为10</h4></pre>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <table border="1">
+            <tr>
+              <td>First</td>
+              <td>Row</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>Row</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table border="1" cellpadding="10">
+            <tr>
+              <td>First</td>
+              <td>Row</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>Row</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table border="1" cellspacing="0">
+            <tr>
+              <td>First</td>
+              <td>Row</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>Row</td>
+            </tr>
+          </table>
+        </td>
+        <td>
+          <table border="1" cellspacing="10">
+            <tr>
+              <td>First</td>
+              <td>Row</td>
+            </tr>
+            <tr>
+              <td>Second</td>
+              <td>Row</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <p>--------以上为表格单元格边距--------</p>
+
+    <table border="1">
+      <tr>
+        <td>
+          <p>这是一个段落</p>
+          <p>这是另一个段落</p>
+        </td>
+        <td>这个单元格包含一个表格:
+          <table border="1">
+            <tr>
+              <td>A</td>
+              <td>B</td>
+            </tr>
+            <tr>
+              <td>C</td>
+              <td>D</td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td>这个单元格包含一个列表
+          <ul>
+            <li>apples</li>
+            <li>bananas</li>
+            <li>pineapples</li>
+          </ul>
+        </td>
+        <td>HELLO</td>
+      </tr>
+    </table>
+    <br>
+    <p>--------以上为表格内布局--------</p>
+
+    <h4>单元格跨两格:</h4>
+    <table border="1">
+      <tr>
+        <th>Name</th>
+        <th colspan="2">Telephone</th>
+      </tr>
+      <tr>
+        <td>Bill Gates</td>
+        <td>555 77 854</td>
+        <td>555 77 855</td>
+      </tr>
+    </table>
+
+    <h4>单元格跨两列:</h4>
+    <table border="1">
+      <tr>
+        <th>First Name:</th>
+        <td>Bill Gates</td>
+      </tr>
+      <tr>
+        <th rowspan="2">Telephone:</th>
+        <td>555 77 854</td>
+      </tr>
+      <tr>
+        <td>555 77 855</td>
+      </tr>
+    </table>
+    <br>
+    <p>--------以上为表格单元格跨格--------</p>
+
+    <!-- 表格的表头使用 <th> 标签进行定义。
+       大多数浏览器会把表头显示为粗体居中的文本
+    -->
+    <!-- 垂直表头 -->
+    <h4>垂直表头带标题:</h4>
+    <table border="1">
+      <caption>BILL GATES' PHONE</caption>
+      <tr>
+        <th>First Name:</th>
+        <td>Bill Gates</td>
+      </tr>
+      <tr>
+        <th>Telephone:</th>
+        <td>555 77 854</td>
+      </tr>
+      <tr>
+        <th>Telephone:</th>
+        <td>555 77 855</td>
+      </tr>
+    </table>
+    <!-- 水平表头 -->
+    <h4>水平表头:</h4>
+    <table border="1">
+      <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+      </tr>
+      <tr>
+        <td>row 1, cell 1</td>
+        <td>row 1, cell 2</td>
+      </tr>
+      <tr>
+        <td>row 2, cell 1</td>
+        <td>row 2, cell 2</td>
+      </tr>
+    </table>
+    <br>
+    <p>--------以上为表格表头--------</p>
+
+    <table align="center">
+      <tr>
+        <td>Row 1, cell 1</td>
+        <td>Row 1, cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 2, cell 1</td>
+        <td>Row 2, cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 3, cell 1</td>
+        <td>Row 3, cell 2</td>
+      </tr>
+      <tr>
+        <td>Row 4, cell 1</td>
+        <td>Row 4, cell 2</td>
+      </tr>
+    </table>
+    <p style="text-align:center">无边框</p>
+    <br>
+    <p>--------以上为表格边框--------</p>
+
+    <br>
+    <p>
+      每个表格从一个 table 标签开始。 每个表格行从 tr 标签开始。 每个表格的数据从 td 标签开始。
+    </p>
+    <h4>一列:</h4>
+    <table border="1">
+      <tr>
+        <td>100</td>
+      </tr>
+    </table>
+    <h4>一行三列:</h4>
+    <table border="1">
+      <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+      </tr>
+    </table>
+    <h4>两行三列:</h4>
+    <table border="1">
+      <tr>
+        <td>100</td>
+        <td>200</td>
+        <td>300</td>
+      </tr>
+      <tr>
+        <td>400</td>
+        <td>500</td>
+        <td>600</td>
+      </tr>
+    </table>
+    <br>
+    <p>--------以上为表格演示--------</p>
+
+    <!-------------------------表格部分------------------------->
+    <p>
+      <-------------------------以上为表格部分------------------------->
+    </p>
+
+    <!-- 图片映射的关键在于一个map标签和下面的area的标签的玩法 -->
+    <!--
+  <map> 标签用于客户端图像映射。图像映射指带有可点击区域的一幅图像。
+  <img>中的 usemap 属性可引用 <map> 中的 id 或 name 属性（取决于浏览器），所以我们应同时向 <map> 添加 id 和 name 属性。
+  area 元素永远嵌套在 map 元素内部。area 元素可定义图像映射中的区域。
+  area 用法详见 http://www.runoob.com/tags/tag-area.html
+   -->
+    <!--
+  HTML5 中, 如果 id 属性在<map> 标签中指定, 则你必须同样指定 name 属性。
+    -->
+    <p>点击太阳或其他行星，注意变化：</p>
+    <img src="pic\planets.gif" width="145" height="126" alt="Planets" usemap="#planetmap" useid="#ppp">
+    <map name="planetmap" id="ppp">
+    <area shape="rect" coords="0,0,82,126" alt="Sun" href="pic\sun.gif" target="_blank">
+    <area shape="circle" coords="90,58,3" alt="Mercury" href="pic\merglobe.gif"target="_blank">
+    <area shape="circle" coords="124,58,8" alt="Venus" href="pic\venglobe.gif"target="_blank">
+  </map>
+    <p>--------以上为html图片映射--------</p>
+    <br>
+
+    <!-- 居中问题
+    水平居中的话就在 img所在的标签设置text-align:center
+    垂直居中的话就在 img上一一一一设置vertical-align:middle(这里用了一个div标签,一个div标签用了一个图片以后,最好不要在用其他的元素了,以免居中有误) -->
+    <pre><h2 style="text-align:center">居中的的条件很多啊
+垂直水平各不同
+详情看注释</h2></pre>
+    <div style="text-align:center"><img style="vertical-align:middle" border="10" src="pic/pulpit.jpg" alt="Pulpit rock" width="304" height="228"></div>
+    <br>
+    <p>一个图像:<img src="pic\smiley.gif" alt="Smiley face" width="32" height="32"></p>
+    <br>
+    <pre><p>style="float:right"贴页面右侧的一个动图
+还带了B站的链接:<a href="http://www.bilibili.com"><img src="pic\hackanm.gif" style="float:right" alt="Computer man" width="48" height="48"></a></p></pre>
+
+    <!-- img图片的属性 -->
+    <!--
+  <img> 是空标签，意思是说，它只包含属性，并且没有闭合标签。
+  要在页面上显示图像，你需要使用源属性src, 指 "source"。源属性的值是图像的 URL 地址。
+  \\
+  alt 属性用来为图像定义一串预备的可替换的文本。
+  替换文本属性的值是用户定义的。在浏览器无法载入图像时，替换文本属性告诉读者她们失去的信息。
+  此时，浏览器将显示这个替代性的文本而不是图像。
+  为页面上的图像都加上替换文本属性是个好习惯，这样有助于更好的显示信息
+  并且对于那些使用纯文本浏览器的人来说是非常有用的。
+  \\
+  height（高度） 与 width（宽度）属性用于设置图像的高度与宽度。
+  指定图像的高度和宽度的一个很好的习惯。
+  如果图像指定了高度宽度，页面加载时就会保留指定的尺寸。
+  如果没有指定图片的大小，加载页面时有可能会破坏HTML页面的整体布局。
+  \\
+    -->
+    <br>
+    <p>--------以上为html链接图片属性--------</p>
+    <br>
+
+    <!-------------------------图片部分------------------------->
+    <p>
+      <-------------------------以上为图片部分------------------------->
+    </p>
+
+    <!--
+  内部样式表:
+  当单个文件需要特别样式时，就可以使用内部样式表。你可以在<head> 部分通过 <style> 标签定义内部样式表:
+  <head>
+  <style type="text/css">
+  body {background-color:yellow;}
+  p {color:blue;}
+  </style>
+  </head>
+  外部样式表:
+  当样式需要被应用到很多页面的时候，外部样式表将是理想的选择。使用外部样式表，你就可以通过 <link> 标签指定一个CSS文件来改变整个站点的外观:
+  <head>
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+  </head>
+    -->
+
+    <!-- 内联样式
+    当特殊的样式需要应用到个别元素时，就可以使用内联样式。
+    使用内联样式的方法是在相关的标签中使用样式属性。
+    样式属性可以包含任何 CSS 属性。
+    以下实例显示出如何改变段落的颜色和左外边距。
+    -->
+    <p style="
+    color:blue;
+    margin-left:20px;">
+      This is a paragraph.
+    </p>
+    <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link" style="text-decoration:none"><h2 style="background-color:red;">这是一个杂糅了很多标签和一个链接的标题</h2></a>
+    <pre><p style="background-color:green;" ><font size = "5">style="
+    background-color:green;
+    &lt;font size = "5"&gt;
+的一个段落
+这里使用了font,但是这是HTML4的遗留,不建议使用
+</font></p></pre>
+    <pre><p style="background-color:green; font-size : 20px;">建议使用这里
+style="
+  background-color:green;
+  font-size : 20px;
+</p></pre>
+    <pre><h1 style="font-family:verdana;">style="
+    font-family:verdana;
+的一个标题</h1></pre>
+    <pre><p style="font-family:arial;color:red;font-size:20px;">style="
+    font-family:arial;
+    color:red;
+    font-size:20px;"
+的一个段落</p></pre>
+    <h1 style="text-align:center;">使用 style="text-align:center; 居中对齐的标题</h1>
+    <p style="text-align:center;">使用 style="text-align:center; 居中对齐的段落</p>
+    <p>--------以上为CSS内联样式--------</p>
+    <br>
+
+    <a href="http://www.runoob.com/css/css-tutorial.html">完整的CSS学习教程</a>
+    <p>--------以上为完整的CSS学习教程,这里我们跟着学习html需要的部分,剩下的部分日后有时间再说吧--------
+    </p>
+
+    <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link">标签链接到一个外部样式表的教程,这里没办法演示这个东西的具体情况</a>
+    <p>--------以上为CSS标签链接到一个外部样式表--------
+    </p>
+
+    <a href="http://www.runoob.com/try/try.php?filename=tryhtml_link" style="text-decoration:none;">使用 style="text-decoration:none; 做一个没有下划线的链接。</a>
+    <p>--------以上为CSS使用样式属性做一个没有下划线的链接。 属性--------
+    </p>
+
+    <br>
+    <p>--------以上为CSS--------</p>
+    <br>
+    <!-------------------------一网页CSS------------------------->
+    <p>
+      <!-- CSS (Cascading Style Sheets) 用于渲染HTML元素标签的样式. -->
+      <!-- 是他妈挺难的 -->
+      <-------------------------以上为网页CSS部分<-------------------------><br>
+
+    </p>
+
+    <!--
+  <head> 元素包含了所有的头部标签元素。
+  在 <head>元素中你可以插入
+    脚本（scripts）, 样式文件（CSS），及各种meta信息。
+  可以添加在头部区域的元素标签为:
+     <title>, <style>, <meta>, <link>, <script>, <noscript>, and <base>.
+  -->
+    <p>--------以上为html-head-各种元素-因为head元素里的东西只能放进&lt;head&gt;里-所以我就只能在那里演示了-------</p>
+    <p>--------这里引出了字符实体的问题,参见<a href="http://www.w3school.com.cn/html/html_entities.asp">W3Cschool</a>--------</p>
+    <br>
+    <!-------------------------一网页链接------------------------->
+    <p>
+      <-------------------------以上为网页head部分------------------------->
+    </p>
+    <p>
+      <pre>  <a href="http://www.runoob.com/" target="_top">
+本例演示如何跳出框架，假如你的页面被固定在框架之内。
+不过说实话我还没有搞懂跳出框架和新建页面的区别是什么
+但是为什么又没有新建页面233</a></pre>
+    </p>
+    <p>--------以上为html链接-跳出框架--------</p>
+    <br>
+
+    <p><a href="#C4">查看章节 4</a></p>
+    <p><a href="#C10">查看章节 10</a></p>
+    <h2>章节 1</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 2</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 3</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2><a id="C4">章节 4</a></h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 5</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 6</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 7</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 8</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 9</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2><a id="C10">章节 10</a></h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 11</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 12</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 13</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 14</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 15</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 16</h2>
+    <p>这边显示该章节的内容……</p>
+    <h2>章节 17</h2>
+    <p>这边显示该章节的内容……</p>
+    <p>--------以上为html链接-在当前页面跳转到指定位置--------</p>
+    <br>
+
+    <p>创建图片链接:
+      <a href="http://www.runoob.com/html/html-tutorial.html">
+  <img  border="10" src="smiley.gif" alt="HTML 教程" width="32" height="32"></a></p>
+
+    <p>无边框的图片链接:
+      <a href="http://www.runoob.com/html/html-tutorial.html">
+  <img border="0" src="smiley.gif" alt="HTML 教程" width="32" height="32"></a></p>
+    <p>--------以上为html链接图片属性--------</p>
+    <br>
+
+    <a href="http://www.runoob.com/html/html-links.html#tips">
+  或者，从另一个页面创建一个链接到"有用的提示部分(id="tips"）</a><br>
+    <a href="#tips">在HTML文档中创建一个链接到"有用的提示部分(id="tips"）</a><br>
+    <a id="tips">在HTML文档中插入ID:</a>
+    <!--
+  id属性可用于创建在一个HTML文档书签标记。
+  提示: 书签是不以任何特殊的方式显示，在HTML文档中是不显示的，所以对于读者来说是隐藏的。
+  -->
+    <p>--------以上为html链接id属性--------</p>
+    <br>
+
+    <p><a href="/index.html">本文本</a> 是一个指向本网站中的一个页面的链接。</p>
+    <p><a href="http://www.microsoft.com/">本文本</a> 是一个指向万维网上的页面的链接。</p>
+    <!--
+      HTML <a> 标签的 target 属性:
+      _blank	在新窗口中打开被链接文档。
+      _self	默认。在相同的框架中打开被链接文档。
+      _parent	在父框架集中打开被链接文档。
+      _top	在整个窗口中打开被链接文档。
+      framename	在指定的框架中打开被链接文档。-->
+    <a href="http://www.runoob.com/" target="_blank">如果你将 target 属性设置为 &quot;_blank&quot;, 链接将在新窗口打开。</a></br>
+    <a href="http://www.runoob.com/" target="_self">如果你将 target 属性设置为 &quot;_self&quot;, 链接将在原窗口打开。</a>
+    <p>--------以上为html链接tag属性--------</p>
+    <br>
+    <!-------------------------一网页链接------------------------->
+    <p>
+      <-------------------------以上为网页链接部分------------------------->
+    </p>
+
+
+
+
+    <!-- -------------------------------分割线------------------------------ -->
+    <!--解释一下学习的过程
+从这里往下是一开始的学习过程,顺序是从上到下为学习过程
+从这里往上是第二阶段的学习过程,为了网页的显示方便我弄成了学习过程从下往上
+也就是说新学的东西在最上方显示
+非常重要的复习提示
+-->
+    <!--此例演示如何使用 pre 标签对空行和空格进行控制-->
+    <p>-------------------------------初始分割线------------------------------</p>
+    <pre>
+此例演示如何使用 pre 标签
+对空行和    空格
+进行控制
+  </pre><br>
+    <!--缩略写和提示--><br><br>
+    <abbr title="etcetera">etc.</abbr><br>
+
+    <a href="http://www.runoob.com">这是一个链接</a><br><br>
+    <p><img src="/images/logo.png" width="258" height="39" /></p>
+
+    <!--上下标和删除线下划线(删除字和插入字)--><br><br>
+    <sub>下标</sub><br /> 这个文本包含
+    <sup>上标</sup><br/>
+    <p>My favorite color is <del>blue</del> <ins>red</ins>!</p>
+
+    <!--长引用--><br><br>
+    <h1>About WWF</h1>
+    <p>Here is a quote from WWF's website:</p>
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+      For 50 years, WWF has been protecting the future of nature. The worlds leading conservation organization, WWF works in 100 countries and is supported by 1.2 million members in the United States and close to 5 million globally.
+    </blockquote>
+
+    <!--短引用--><br><br>
+    <p>WWF's goal is to:<q>Build a future where people live in harmony with nature.</q> We hope they succeed.</p>
+
+    <!--Address的用法--><br><br>
+    <address>
+    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+    Visit us at:<br>
+    Example.com<br>
+    Box 564, Disneyland<br>
+    USA
+  </address>
+
+    <!--bdo处理文字方向
+    ltr 是英文 left to right 的首字母缩写，即从左到右。
+    同理rtl 是英文 right to left 即从右到左。--><br><br>
+    <p>该段落文字从左到右显示。</p>
+    <p><bdo dir="rtl">该段落文字从右到左显示。</bdo></p>
+
+    <!--Address的用法--><br><br>
+    <img src="img_the_scream.jpg" width="220" height="277" alt="The Scream">
+    <p><cite>The Scream</cite><br> by Edward Munch. Painted in 1893.</p>
+
+    <!--一些自己解释了的小标签--><br><br>
+    <em>强调文本</em><br>
+    <strong>加粗文本</strong><br>
+    <dfn>定义项目</dfn><br>
+    <code>一段电脑代码</code><br>
+    <samp>计算机样本</samp><br>
+    <kbd>键盘输入</kbd><br>
+    <var>变量</var>
+
+
+
+
+</body>
+
+</html>
