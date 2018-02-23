@@ -118,7 +118,155 @@
 </head>
 
 <body>
+
+  <form name="changeform" action="http://www.w3cschool.cc/try/html_form_submit.php" target="_blank" method="post">
+    <input type="text" name="txt" id="txt" value="Hello Günter" size="30">
+    <input name="submit" type="button" value="URL 编码" onclick="urlencode()">
+    <script>
+      function encode() {
+        x = document.getElementById("text")
+        document.getElementById("encodingresult").innerHTML = x.urlencode()
+      }
+    </script>
+  </form>
+  <span id="encodingresult">233</span>
+  <p>--------以上为html URL 编码函数--------</p>
+  <br>
   <!-- Coding Following -->
+  <!--Web浏览器通过URL从Web服务器请求页面。
+      当您点击 HTML 页面中的某个链接时，对应的 <a> 标签指向万维网上的一个地址。
+      一个统一资源定位器(URL) 用于定位万维网上的文档。
+      一个网页地址实例: http://www.runoob.com/html/html-tutorial.html
+      语法规则: ==>  scheme://host.domain:port/path/filename
+      说明:
+          scheme - 定义因特网服务的类型。最常见的类型是 http
+                http	超文本传输协议	以 http:// 开头的普通网页。不加密。
+                https	安全超文本传输协议	安全网页，加密所有信息交换。
+                ftp	文件传输协议	用于将文件下载或上传至网站。
+                file	 	您计算机上的文件。
+          host - 定义域主机（http 的默认主机是 www）
+          domain - 定义因特网域名，比如 runoob.com
+          :port - 定义主机上的端口号（http 的默认端口号是 80）
+          path - 定义服务器上的路径（如果省略，则文档必须位于网站的根目录中）。
+          filename - 定义文档/资源的名称-->
+  <!-- URL的编码比较复杂
+
+
+
+    -->
+  <p>参考: <a href="http://www.runoob.com/tags/html-urlencode.html" style="text-decoration:none;">HTML`URL`编码参考手册</a></p>
+  <p>--------以上为html脚本展示--------</p>
+  <br>
+  <p>
+    <-------------------------以上为html URL ------------------------->
+  </p>
+
+  <table class="reference" border="0.1px" align="center" bgcolor="FFFFE0" style="text-align:center">
+    <tbody>
+      <tr>
+        <th style="width:20%">显示结果</th>
+        <th style="width:20%">描述</th>
+        <th style="width:30%">实体名称</th>
+        <th style="width:30%">实体编号</th>
+      </tr>
+      <tr>
+        <td>&nbsp;</td>
+        <td>空格</td>
+        <td>&amp;nbsp;</td>
+        <td>&amp;#160;</td>
+      </tr>
+      <tr>
+        <td>&lt;</td>
+        <td>小于号</td>
+        <td>&amp;lt;</td>
+        <td>&amp;#60;</td>
+      </tr>
+      <tr>
+        <td>&gt;</td>
+        <td>大于号</td>
+        <td>&amp;gt;</td>
+        <td>&amp;#62;</td>
+      </tr>
+      <tr>
+        <td>&amp;</td>
+        <td>和号</td>
+        <td>&amp;amp;</td>
+        <td>&amp;#38;</td>
+      </tr>
+      <tr>
+        <td>"</td>
+        <td>引号</td>
+        <td>&amp;quot;</td>
+        <td>&amp;#34;</td>
+      </tr>
+      <tr>
+        <td>'</td>
+        <td>撇号&nbsp;</td>
+        <td>&amp;apos; (IE不支持)</td>
+        <td>&amp;#39;</td>
+      </tr>
+      <tr>
+        <td>￠</td>
+        <td>分</td>
+        <td>&amp;cent;</td>
+        <td>&amp;#162;</td>
+      </tr>
+      <tr>
+        <td>£</td>
+        <td>镑</td>
+        <td>&amp;pound;</td>
+        <td>&amp;#163;</td>
+      </tr>
+      <tr>
+        <td>¥</td>
+        <td>人民币/日元</td>
+        <td>&amp;yen;</td>
+        <td>&amp;#165;</td>
+      </tr>
+      <tr>
+        <td>€</td>
+        <td>欧元</td>
+        <td>&amp;euro;</td>
+        <td>&amp;#8364;</td>
+      </tr>
+      <tr>
+        <td>§</td>
+        <td>小节</td>
+        <td>&amp;sect;</td>
+        <td>&amp;#167;</td>
+      </tr>
+      <tr>
+        <td>©</td>
+        <td>版权</td>
+        <td>&amp;copy;</td>
+        <td>&amp;#169;</td>
+      </tr>
+      <tr>
+        <td>®</td>
+        <td>注册商标</td>
+        <td>&amp;reg;</td>
+        <td>&amp;#174;</td>
+      </tr>
+      <tr>
+        <td>™</td>
+        <td>商标</td>
+        <td>&amp;trade;</td>
+        <td>&amp;#8482;</td>
+      </tr>
+      <tr>
+        <td>×</td>
+        <td>乘号</td>
+        <td>&amp;times;</td>
+        <td>&amp;#215;</td>
+      </tr>
+      <tr>
+        <td>÷</td>
+        <td>除号</td>
+        <td>&amp;divide;</td>
+        <td>&amp;#247;</td>
+      </tr>
+    </tbody>
+  </table>
   <p>--------以上为html字符实体--------</p>
   <br>
   <p>
